@@ -94,7 +94,11 @@
             <!-- Cart- 1 -->
             <div class="col">
               <div class="h-100 card-overlay">
-                <img src="/img.vg/watch3.webp" class="card-img-top" alt="..." />
+                <img
+                  src="../img.vg/watch3.webp"
+                  class="card-img-top"
+                  alt="..."
+                />
                 <div class="slide bg-opacity-color">
                   <p class="text">Lorem, ipsum dolor.</p>
                 </div>
@@ -110,26 +114,35 @@
                   class="btn btn-outline-warning w-100 mt-3 btn-overlay"
                   data-bs-toggle="modal"
                   data-bs-target="#productModal-3"
-                  onclick="addToCart()"
                 >
-                  Sepete Gonder
+                  Urun bilgileri
                 </button>
               </div>
             </div>
             <!-- Modal Sebete Elave Etme -->
             <!-- Id gore teyin olundu producModel-id.? -->
-            <div
+
+            <!-- <div
               class="modal fade"
               id="productModal-3"
               tabindex="-1"
               aria-labelledby="productModalLabel"
               aria-hidden="true"
             >
-              <!-- Modal-Dialog -->
-              <div class="modal-dialog modal-dialog-centered modal-lg">
+            
+            </div> -->
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="productModal-3"
+              tabindex="-1"
+              aria-labelledby="productDetailsModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="productModalLabel">
+                    <h5 class="modal-title" id="productDetailsModalLabel">
                       Ürün Detayları
                     </h5>
                     <button
@@ -139,86 +152,45 @@
                       aria-label="Close"
                     ></button>
                   </div>
-                  <!-- Modal Img and List group -->
                   <div class="modal-body">
-                    <div class="row">
-                      <div class="col-md-6 text-center">
-                        <img
-                          src="../img.vg/watch3.webp"
-                          alt="Ürün Resmi"
-                          class="img-fluid"
-                        />
+                    <div class="row mb-3">
+                      <div class="col-6">
+                        <strong>Ürün Fiyatı:</strong>
                       </div>
-                      <div class="col-md-6">
-                        <h2>Ürün Adı</h2>
-                        <p>Ürün Açıklaması Buraya Yazılacak</p>
-                        <ul class="list-group">
-                          <li
-                            class="list-group-item d-flex justify-content-between align-items-center"
+                      <div class="col-6 text-end">
+                        <span id="productPrice" va>$99.99</span>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col-6">
+                        <strong>Ürün Adedi:</strong>
+                      </div>
+                      <div class="col-6 text-end">
+                        <div class="input-group">
+                          <button
+                            class="btn btn-outline-secondary"
+                            type="button"
+                            id="decreaseQuantity"
                           >
-                            Fiyat:
-                            <span id="price"></span>
-
-                            <!-- Product price -->
-                            <input
-                              type="hidden"
-                              id="product-price"
-                              value="99.99"
-                            />
-                          </li>
-                          <li
-                            class="list-group-item d-flex justify-content-between align-items-center"
+                            -
+                          </button>
+                          <input
+                            type="number"
+                            class="form-control text-center"
+                            id="productQuantity"
+                            value="1"
+                          />
+                          <button
+                            class="btn btn-outline-secondary"
+                            type="button"
+                            id="increaseQuantity"
                           >
-                            Adet
-                            <div class="input-group w-50">
-                              <button
-                                class="btn btn-outline-secondary"
-                                type="button"
-                                onclick="decreaseQuantity()"
-                              >
-                                -
-                              </button>
-                              <input
-                                id="quantity"
-                                type="text"
-                                class="form-control text-center"
-                                value="1"
-                              />
-                              <button
-                                class="btn btn-outline-secondary"
-                                type="button"
-                                onclick="increaseQuantity()"
-                              >
-                                +
-                              </button>
-                            </div>
-                          </li>
-                          <li
-                            class="list-group-item d-flex justify-content-between align-items-center"
-                          >
-                            Sıra (Bar-COD)
-                            <span class="badge bg-secondary rounded-pill"
-                              >1</span
-                            >
-                          </li>
-                          <li
-                            class="list-group-item d-flex justify-content-between align-items-center"
-                          >
-                            Renk
-                            <div>
-                              <button
-                                class="btn bg-danger rounded-circle bg-radius-color"
-                              ></button>
-                              <button
-                                class="btn bg-primary rounded-circle bg-radius-color"
-                              ></button>
-                            </div>
-                          </li>
-                        </ul>
+                            +
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <!-- Modal button  -->
                   <div class="modal-footer">
                     <button
                       type="button"
@@ -230,7 +202,7 @@
                     <button
                       type="button"
                       class="btn btn-primary"
-                      onclick="addToCart()"
+                      id="addToCartButton"
                     >
                       Sepete Ekle
                     </button>
@@ -238,10 +210,15 @@
                 </div>
               </div>
             </div>
+
             <!-- Cart- 2 -->
             <div class="col">
               <div class="h-100 card-overlay">
-                <img src="/img.vg/watch2.webp" class="card-img-top" alt="..." />
+                <img
+                  src="../img.vg/watch2.webp"
+                  class="card-img-top"
+                  alt="..."
+                />
                 <div class="slide bg-opacity-color">
                   <p class="text">Lorem, ipsum dolor.</p>
                 </div>
@@ -385,7 +362,11 @@
             <!-- Cart- 3 -->
             <div class="col">
               <div class="h-100 card-overlay">
-                <img src="/img.vg/watch1.webp" class="card-img-top" alt="..." />
+                <img
+                  src="../img.vg/watch1.webp"
+                  class="card-img-top"
+                  alt="..."
+                />
                 <div class="slide bg-opacity-color">
                   <p class="text">Lorem, ipsum dolor.</p>
                 </div>
@@ -530,7 +511,11 @@
             <!-- Cart- 4 -->
             <div class="col">
               <div class="h-100 card-overlay">
-                <img src="/img.vg/watch3.webp" class="card-img-top" alt="..." />
+                <img
+                  src="../img.vg/watch3.webp"
+                  class="card-img-top"
+                  alt="..."
+                />
                 <div class="slide bg-opacity-color">
                   <p class="text">Lorem, ipsum dolor.</p>
                 </div>
@@ -674,7 +659,11 @@
             <!-- Cart- 5 -->
             <div class="col">
               <div class="h-100 card-overlay">
-                <img src="/img.vg/watch2.webp" class="card-img-top" alt="..." />
+                <img
+                  src="../img.vg/watch2.webp"
+                  class="card-img-top"
+                  alt="..."
+                />
                 <div class="slide bg-opacity-color">
                   <p class="text">Lorem, ipsum dolor.</p>
                 </div>
@@ -818,7 +807,11 @@
             <!-- Cart- 6 -->
             <div class="col">
               <div class="h-100 card-overlay">
-                <img src="/img.vg/watch1.webp" class="card-img-top" alt="..." />
+                <img
+                  src="../img.vg/watch1.webp"
+                  class="card-img-top"
+                  alt="..."
+                />
                 <div class="slide bg-opacity-color">
                   <p class="text">Lorem, ipsum dolor.</p>
                 </div>
